@@ -26,6 +26,10 @@
             android:name=".HowToActivity"
             android:label="HowTo">
         </activity>
+        <activity
+            android:name=".InfoActivity"
+            android:label="HowTo">
+        </activity>
 
     </application>
 
