@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GlobalWarmingSim</string>
+    <string name="title">Global Warming Sim</string>
 </resources>
