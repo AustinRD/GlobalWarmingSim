@@ -3,6 +3,7 @@ package com.example.austin.globalwarmingsim;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.view.View;
 import android.widget.TextView;
 
 public class PopupWindow extends AppCompatActivity
@@ -13,8 +14,24 @@ public class PopupWindow extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popupwindow);
 
-        TextView popupTextOverride = (TextView)findViewById(R.id.regionPopupTextview);
-        popupTextOverride.setText(populateRegionInfo(DataHolder.whichRegion));
+        if(DataHolder.whichRegion >= 0 && DataHolder.whichRegion <= 3)
+        {
+            TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
+            choiceOne.setVisibility(View.GONE);
+            TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
+            choiceTwo.setVisibility(View.GONE);
+            TextView regionInfo = (TextView)findViewById(R.id.regionPopupTextview);
+            regionInfo.setText(populateRegionInfo(DataHolder.whichRegion));
+        }
+        else
+        {
+            TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
+            choiceOne.setVisibility(View.VISIBLE);
+            TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
+            choiceTwo.setVisibility(View.VISIBLE);
+            TextView choicePretext = (TextView) findViewById(R.id.regionPopupTextview);
+            choicePretext.setVisibility(View.VISIBLE);
+        }
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

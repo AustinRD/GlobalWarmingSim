@@ -2,7 +2,7 @@ package com.example.austin.globalwarmingsim;
 
 //all global data goes here
 public class DataHolder {
-    static public int whichRegion = 0;
+    static public int whichRegion = 5;
 
     static public Simulator sim = new Simulator(0);
 
