@@ -1,9 +1,16 @@
 package com.example.austin.globalwarmingsim;
 
+import android.content.Intent;
+
 import java.util.ArrayList;
 
 public class Simulator {
-    public Region[] regions; // 4 regions
+    public Region[] regions = {
+            new Region("West", 15000000, DataHolder.sim),
+            new Region("Midwest", 50000000, DataHolder.sim),
+            new Region("South", 50000000, DataHolder.sim),
+            new Region("East", 100000000, DataHolder.sim),
+    };
     public ArrayList<Event> events;
     public ArrayList<Event> results;
     public int development; // 1-10 scale. 1 good 10 bad
@@ -20,7 +27,7 @@ public class Simulator {
     public int pollution;
 
     public Simulator(int diff) {
-        events = new ArrayList();
+        events = new ArrayList<>();
         switch (diff) {
             default:
             case(0):

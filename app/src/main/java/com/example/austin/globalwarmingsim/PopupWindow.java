@@ -8,12 +8,15 @@ import android.widget.TextView;
 
 public class PopupWindow extends AppCompatActivity
 {
+    int ii = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popupwindow);
-
+        int choice = 0;
+        String postText1 = "";
+        String postText2 = "";
         if(DataHolder.whichRegion >= 0 && DataHolder.whichRegion <= 3)
         {
             TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
@@ -33,9 +36,26 @@ public class PopupWindow extends AppCompatActivity
             choiceOne.setText(DataHolder.events[DataHolder.I].name);
             TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
             choiceTwo.setVisibility(View.VISIBLE);
+            //postText1 = DataHolder.events[DataHolder.I].text;
+            ii = DataHolder.I;
             DataHolder.I++;
             choiceTwo.setText(DataHolder.events[DataHolder.I].name);
+            //postText2 = DataHolder.events[DataHolder.I].text;
             choiceOne.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
+                    choiceOne.setVisibility(View.GONE);
+                    TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
+                    choiceTwo.setVisibility(View.GONE);
+                    TextView postText = (TextView) findViewById(R.id.regionPopupTextview);
+                    postText.setText(DataHolder.events[ii].text);
+
+                }
+            });
+            choiceTwo.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
@@ -49,6 +69,7 @@ public class PopupWindow extends AppCompatActivity
 
                 }
             });
+            DataHolder.I++;
         }
 
         DisplayMetrics dm = new DisplayMetrics();
