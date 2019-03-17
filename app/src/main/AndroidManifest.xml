@@ -20,13 +20,21 @@
         </activity>
         <activity
             android:name=".PlayActivity"
-            android:label="Play"></activity>
+            android:label="Play">
+        </activity>
         <activity
             android:name=".HowToActivity"
-            android:label="HowTo"></activity>
+            android:label="HowTo">
+        </activity>
         <activity
             android:name=".InfoActivity"
-            android:label="HowTo"></activity>
+            android:label="Info">
+        </activity>
+        <activity
+            android:name=".PopupWindow"
+            android:label="Popup"
+            android:theme="@style/AppTheme.CustomTheme">
+        </activity>
     </application>
 
 </manifest>

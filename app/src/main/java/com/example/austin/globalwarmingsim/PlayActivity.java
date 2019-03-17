@@ -1,11 +1,14 @@
 package com.example.austin.globalwarmingsim;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
+import android.view.View;
 import android.widget.ImageView;
 
 public class PlayActivity extends AppCompatActivity
@@ -25,19 +28,53 @@ public class PlayActivity extends AppCompatActivity
         setContentView(R.layout.activity_play);
         mImageView = (ImageView) findViewById(R.id.imageView_playMap);
         mScaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+
+        ImageView eastCoastInfo = (ImageView) findViewById(R.id.imageView_eastCoastEye);
+        eastCoastInfo.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
+                startActivity(regionPopup);
+            }
+        });
+        ImageView westCoastInfo = (ImageView) findViewById(R.id.imageView_westCoastEye);
+        westCoastInfo.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
+                startActivity(regionPopup);
+            }
+        });
+        ImageView southernInfo = (ImageView) findViewById(R.id.imageView_southernEye);
+        southernInfo.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
+                startActivity(regionPopup);
+            }
+        });
+        ImageView midWestInfo = (ImageView) findViewById(R.id.imageView_midWestEye);
+        midWestInfo.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
+                startActivity(regionPopup);
+            }
+        });
     }
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
         mScaleGestureDetector.onTouchEvent(event);
-
-
         return true;
-    }
-    public void switchActivity()
-    {
-        Intent swap = new Intent(PlayActivity.this, MainActivity.class);
-        startActivity(swap);
     }
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener
