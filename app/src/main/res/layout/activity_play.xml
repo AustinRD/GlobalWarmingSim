@@ -25,61 +25,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Population:"
+            android:text=""
             android:gravity="center"
             android:textSize="16sp"
             android:textColor="@android:color/white"
             android:background="@android:color/black" />
-        <TextView
-            android:id="@+id/textView_populationNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="300,000"
-            android:textSize="16sp"
-            android:textColor="@android:color/white"
-            android:background="@android:color/black" />
+
         <TextView
             android:id="@+id/textView_pollution"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Pollution:"
+            android:text=""
             android:textSize="16sp"
             android:textColor="@android:color/white"
             android:background="@android:color/black" />
-        <TextView
-            android:id="@+id/textView_pollutionLevel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Moderate"
-            android:textSize="16sp"
-            android:textColor="@android:color/white"
-            android:background="@android:color/black" />
+
         <TextView
             android:id="@+id/textView_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Year:"
+            android:text=""
             android:textSize="16sp"
             android:textColor="@android:color/white"
             android:background="@android:color/black" />
-        <TextView
-            android:id="@+id/textView_yearNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1980"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textColor="@android:color/white"
-            android:background="@android:color/black" />
+
     </LinearLayout>
 
     <ImageView

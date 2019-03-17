@@ -80,6 +80,15 @@ public class PlayActivity extends AppCompatActivity
                 startActivity(regionPopup);
             }
         });
+
+        TextView populationText = (TextView) findViewById(R.id.textView_population);
+        populationText.setText("Population:");
+        TextView pollutionText = (TextView) findViewById(R.id.textView_pollution);
+        pollutionText.setText("Pollution:");
+        TextView yearText = (TextView) findViewById(R.id.textView_year);
+        yearText.setText("Year:");
+
+
     }
 
     @Override
