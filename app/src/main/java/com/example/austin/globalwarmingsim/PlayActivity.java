@@ -1,18 +1,14 @@
 package com.example.austin.globalwarmingsim;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
 
 public class PlayActivity extends AppCompatActivity
 {
@@ -81,14 +77,13 @@ public class PlayActivity extends AppCompatActivity
             }
         });
 
+        //Overlay Text
         TextView populationText = (TextView) findViewById(R.id.textView_population);
         populationText.setText("Population:");
         TextView pollutionText = (TextView) findViewById(R.id.textView_pollution);
         pollutionText.setText("Pollution:");
         TextView yearText = (TextView) findViewById(R.id.textView_year);
         yearText.setText("Year:");
-
-
     }
 
     @Override
@@ -97,7 +92,6 @@ public class PlayActivity extends AppCompatActivity
         mScaleGestureDetector.onTouchEvent(event);
         return true;
     }
-
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener
     {
         ImageView eastCoastInfo = (ImageView) findViewById(R.id.imageView_eastCoastEye);
@@ -127,7 +121,6 @@ public class PlayActivity extends AppCompatActivity
                 westCoastInfo.setVisibility(View.VISIBLE);
                 southernInfo.setVisibility(View.VISIBLE);
                 midWestInfo.setVisibility(View.VISIBLE);
-
             }
             else if(mScaleFactor > 2)
             {
