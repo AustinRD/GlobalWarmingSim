@@ -1,5 +1,6 @@
 package com.example.austin.globalwarmingsim;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -32,6 +33,11 @@ public class PlayActivity extends AppCompatActivity
 
 
         return true;
+    }
+    public void switchActivity()
+    {
+        Intent swap = new Intent(PlayActivity.this, MainActivity.class);
+        startActivity(swap);
     }
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener

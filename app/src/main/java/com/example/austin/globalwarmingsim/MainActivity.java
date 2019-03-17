@@ -1,10 +1,13 @@
 package com.example.austin.globalwarmingsim;
 
 import android.content.Intent;
+import android.graphics.Path;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import com.github.siyamed.shapeimageview.*;
+import com.github.siyamed.shapeimageview.path.parser.SvgToPath;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -40,6 +43,14 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent swap = new Intent(MainActivity.this, CreditsActivity.class);
+                startActivity(swap);
+            }
+        });
+        Button settingsButton = (Button)findViewById(R.id.button_settings);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent swap = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(swap);
             }
         });
