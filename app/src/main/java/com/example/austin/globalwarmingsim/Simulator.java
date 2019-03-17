@@ -1,10 +1,6 @@
 package com.example.austin.globalwarmingsim;
 
-import android.provider.ContactsContract;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Simulator {
     public Region[] regions; // 4 regions
