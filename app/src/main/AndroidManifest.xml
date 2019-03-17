@@ -9,9 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingsActivity"></activity>
-        <activity android:name=".CreditsActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="landscape">
+        </activity>
+        <activity
+            android:name=".CreditsActivity"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,20 +27,24 @@
         </activity>
         <activity
             android:name=".PlayActivity"
-            android:label="Play">
+            android:label="Play"
+            android:screenOrientation="landscape">
         </activity>
         <activity
             android:name=".HowToActivity"
-            android:label="HowTo">
+            android:label="HowTo"
+            android:screenOrientation="landscape">
         </activity>
         <activity
             android:name=".InfoActivity"
-            android:label="Info">
+            android:label="Info"
+            android:screenOrientation="landscape">
         </activity>
         <activity
             android:name=".PopupWindow"
             android:label="Popup"
-            android:theme="@style/AppTheme.CustomTheme">
+            android:theme="@style/AppTheme.CustomTheme"
+            android:screenOrientation="landscape">
         </activity>
     </application>
 
