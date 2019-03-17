@@ -82,7 +82,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/nw_eye"
+        android:id="@+id/imageView_westCoastEye"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -94,7 +94,7 @@
         android:src="@drawable/eye" />
 
     <ImageView
-        android:id="@+id/w_eye"
+        android:id="@+id/imageView_midWestEye"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -106,7 +106,7 @@
         android:src="@drawable/eye" />
 
     <ImageView
-        android:id="@+id/s_eye"
+        android:id="@+id/imageView_southernEye"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -118,7 +118,7 @@
         android:src="@drawable/eye" />
 
     <ImageView
-        android:id="@+id/ec_eye"
+        android:id="@+id/imageView_eastCoastEye"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
