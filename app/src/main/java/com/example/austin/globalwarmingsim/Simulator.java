@@ -1,5 +1,8 @@
 package com.example.austin.globalwarmingsim;
 
+import android.provider.ContactsContract;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,9 +28,9 @@ public class Simulator {
             default:
             case(0):
                 development = 5;
-                cO2 = 350;
-                avgTemp = 58;
-                seaLevel = 0;
+                cO2 = 335.0; // ppm
+                avgTemp = 57.5; // fahrenheit
+                seaLevel = 0; // ft from starting
                 date = 1980;
         }
     }
@@ -44,10 +47,20 @@ public class Simulator {
         resultingEvents = tickRegions(stagedEvents);
         updateGlobals();
         resultingEvents.addAll(resultingEvents());
+        resultingEvents = filterDates(resultingEvents);
         results = resultingEvents;
         date++;
     }
 
+    /**
+     * Set the difficulty of the simulation. (ONLY CALL ONCE)
+     * @param d Difficulty: 0 = NORMAL, 1 = HARD.
+     */
+    public void setDifficulty() {
+        for (Region region : regions) {
+            region.setDifficulty();
+        }
+    }
 
     private void updateGlobals() {
         // Update ones straight from regions
@@ -108,13 +121,13 @@ public class Simulator {
     }
 
     private void updateTemp() {
-        davgTemp = (dcO2 * (cO2 / avgTemp) * 0.01);
+        davgTemp = (dcO2 * (cO2 / avgTemp) * 0.005);
         avgTemp += davgTemp;
     }
 
     private void updateSeaLevel() {
-        dseaLevel = ((avgTemp % 58) * 7);
-        seaLevel = (int)(((avgTemp % 58) * 7) + 58); // TODO better formula?
+        dseaLevel = ((avgTemp % 57.5) * 0.01); // Just kinda made up.
+        seaLevel = (int)((avgTemp % 57.5) * 3); // this works nice.
     }
 
     private void updateAnimals() {
@@ -131,5 +144,14 @@ public class Simulator {
         return happened;
     }
 
-}
+    private ArrayList<Event> filterDates(ArrayList<Event> es) {
+        ArrayList<Event> filtered = new ArrayList<>();
+        for (Event event : es) {
+            if (event.triggerTime == date) {
+                filtered.add(event);
+            }
+        }
+        return filtered;
+    }
 
+}

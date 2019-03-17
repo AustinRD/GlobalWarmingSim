@@ -3,6 +3,7 @@ package com.example.austin.globalwarmingsim;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Event {
     public int id;
@@ -11,19 +12,20 @@ public class Event {
     public Region appliesTo = null;
     public int triggerTime;
     public String text;
+    public ArrayList<Event> resultingEvents = null;
 
     // Parameters that modify gamedata.
-    public int badIndustry;
-    public int goodIndustry;
-    public int badEnergy;
-    public int goodEnergy;
-    public double popGrowthRate;
-    public int population;
-    public int animalSpecies;
-    public double badFactEmission;
-    public double goodFactEmission;
-    public double avgTemp;
-    public double seaLevel;
+    public int badIndustry = 0;
+    public int goodIndustry = 0;
+    public int badEnergy = 0;
+    public int goodEnergy = 0;
+    public double popGrowthRate = 0;
+    public int population = 0;
+    public int animalSpecies = 0;
+    public double badFactEmission = 0;
+    public double goodFactEmission = 0;
+    public double avgTemp = 0;
+    public double seaLevel = 0;
 
     /**
      * An event in the game. Modifies game parameters on tick.
@@ -38,4 +40,3 @@ public class Event {
         triggerTime = trig;
     }
 }
-
