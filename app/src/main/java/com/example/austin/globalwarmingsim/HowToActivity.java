@@ -10,6 +10,6 @@ public class HowToActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activtiy_play);
+        setContentView(R.layout.activity_howto);
     }
 }
