@@ -39,6 +39,7 @@ public class PlayActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 DataHolder.whichRegion = 3;
+                DataHolder.region[DataHolder.whichRegion].setDifficulty();
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
@@ -50,6 +51,7 @@ public class PlayActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 DataHolder.whichRegion = 0;
+                DataHolder.region[DataHolder.whichRegion].setDifficulty();
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
@@ -61,6 +63,7 @@ public class PlayActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 DataHolder.whichRegion = 2;
+                DataHolder.region[DataHolder.whichRegion].setDifficulty();
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
@@ -72,6 +75,7 @@ public class PlayActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 DataHolder.whichRegion = 1;
+                DataHolder.region[DataHolder.whichRegion].setDifficulty();
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
