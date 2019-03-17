@@ -55,6 +55,7 @@ public class Region {
                 goodEnergy = 2;
                 animalSpecies = 100;
                 development = 5;
+                sim.pollution = 20;
                 break;
             case(1): // HARD (Untested results.)
                 badIndustry = 20;
@@ -64,6 +65,7 @@ public class Region {
                 animalSpecies = 80;
                 development = 5;
                 badFactEmission *= 2;
+                sim.pollution = 30;
                 break;
         }
         updateDeltacO2();

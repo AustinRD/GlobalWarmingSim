@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class PlayActivity extends AppCompatActivity
 {
     //Code necessary for scaling the play map. (Zooming)
@@ -25,6 +27,31 @@ public class PlayActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_play);
+
+        int d = 0; // Difficulty
+        Simulator newGame = new Simulator(0);
+        Region[] rs = {
+                new Region("North East", 15000000 , newGame),
+                new Region("South", 50000000, newGame),
+                new Region("Midwest", 50000000, newGame),
+                new Region("West Coast", 100000000, newGame)
+        };
+        newGame.regions = rs;
+        newGame.setDifficulty(0);
+
+        ArrayList<Event> event = new ArrayList<>();
+        newGame.tick(event);
+
+        String popText = "Population: " + newGame.population;
+        String polText = "Pollution: " + newGame.pollution;
+        String dateText = "Year: " + newGame.date;
+
+        TextView populationText = (TextView) findViewById(R.id.textView_population);
+        populationText.setText(popText);
+        TextView pollutionText = (TextView) findViewById(R.id.textView_pollution);
+        pollutionText.setText(polText);
+        TextView yearText = (TextView) findViewById(R.id.textView_year);
+        yearText.setText(dateText);
         mImageView = (ImageView) findViewById(R.id.imageView_playMap);
         mScaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
@@ -77,13 +104,7 @@ public class PlayActivity extends AppCompatActivity
             }
         });
 
-        //Overlay Text
-        TextView populationText = (TextView) findViewById(R.id.textView_population);
-        populationText.setText("Population:");
-        TextView pollutionText = (TextView) findViewById(R.id.textView_pollution);
-        pollutionText.setText("Pollution:");
-        TextView yearText = (TextView) findViewById(R.id.textView_year);
-        yearText.setText("Year:");
+
     }
 
     @Override

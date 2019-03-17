@@ -3,7 +3,8 @@ package com.example.austin.globalwarmingsim;
 import java.util.ArrayList;
 
 //all global data goes here
-public class DataHolder {
+public class DataHolder
+{
     static public int whichRegion = 5;
 
     static public Simulator sim = new Simulator(0);
@@ -23,7 +24,8 @@ public class DataHolder {
 
     static public Event[] events = new Event[50];
 
-    public static Event[] initEvents(Simulator s) {
+    public static Event[] initEvents(Simulator s)
+    {
 
     /*
       INIT EVENT AT ARRAY INDEX

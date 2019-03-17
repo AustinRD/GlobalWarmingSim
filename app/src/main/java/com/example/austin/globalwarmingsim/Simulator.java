@@ -6,17 +6,18 @@ public class Simulator {
     public Region[] regions; // 4 regions
     public ArrayList<Event> events;
     public ArrayList<Event> results;
-    int development; // 1-10 scale. 1 good 10 bad
-    double cO2; // In parts/million
-    double dcO2;
-    double avgTemp; // In celsius
-    double davgTemp;
-    double seaLevel; // In ft increase from game start
-    double dseaLevel;
-    int population; // nation
-    int dPopulation;
-    int date; // in 1 yr increments ENDS IN 2030
-    int animalSpecies;
+    public int development; // 1-10 scale. 1 good 10 bad
+    public double cO2; // In parts/million
+    public double dcO2;
+    public double avgTemp; // In celsius
+    public double davgTemp;
+    public double seaLevel; // In ft increase from game start
+    public double dseaLevel;
+    public int population; // nation
+    public int dPopulation;
+    public int date; // in 1 yr increments ENDS IN 2030
+    public int animalSpecies;
+    public int pollution;
 
     public Simulator(int diff) {
         events = new ArrayList();
@@ -27,7 +28,7 @@ public class Simulator {
                 cO2 = 335.0; // ppm
                 avgTemp = 57.5; // fahrenheit
                 seaLevel = 0; // ft from starting
-                date = 1980;
+                date = 1979;
         }
     }
 
@@ -52,8 +53,10 @@ public class Simulator {
      * Set the difficulty of the simulation. (ONLY CALL ONCE)
      * @param d Difficulty: 0 = NORMAL, 1 = HARD.
      */
-    public void setDifficulty() {
-        for (Region region : regions) {
+    public void setDifficulty(int d)
+    {
+        for (Region region : regions)
+        {
             region.setDifficulty();
         }
     }
