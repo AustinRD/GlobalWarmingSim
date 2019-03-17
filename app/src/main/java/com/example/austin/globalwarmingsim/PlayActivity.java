@@ -21,7 +21,7 @@ public class PlayActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activtiy_play);
+        setContentView(R.layout.activity_play);
         mImageView = (ImageView) findViewById(R.id.imageView_playMap);
         mScaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
     }
