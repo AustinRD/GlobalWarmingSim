@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class PlayActivity extends AppCompatActivity
 {
@@ -35,6 +36,7 @@ public class PlayActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                DataHolder.whichRegion = 3;
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
@@ -45,6 +47,7 @@ public class PlayActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                DataHolder.whichRegion = 0;
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
@@ -55,6 +58,7 @@ public class PlayActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                DataHolder.whichRegion = 2;
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
@@ -65,11 +69,13 @@ public class PlayActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                DataHolder.whichRegion = 1;
                 Intent regionPopup = new Intent(PlayActivity.this,PopupWindow.class);
                 startActivity(regionPopup);
             }
         });
     }
+
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {
