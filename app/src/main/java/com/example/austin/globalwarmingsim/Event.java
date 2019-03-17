@@ -1,5 +1,8 @@
 package com.example.austin.globalwarmingsim;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Event {
@@ -9,6 +12,7 @@ public class Event {
     public Region appliesTo = null;
     public int triggerTime;
     public String text;
+    public String preText;
     public ArrayList<Event> resultingEvents = null;
 
     // Parameters that modify gamedata.
@@ -23,6 +27,7 @@ public class Event {
     public double goodFactEmission = 0;
     public double avgTemp = 0;
     public double seaLevel = 0;
+    public int pollution = 0;
 
     /**
      * An event in the game. Modifies game parameters on tick.
