@@ -24,6 +24,8 @@ public class DataHolder
 
     static public int date = 1980;
 
+    static public int I = 0;
+
     static public Event[] events = new Event[50];
 
     public static Event[] initEvents(Simulator s)

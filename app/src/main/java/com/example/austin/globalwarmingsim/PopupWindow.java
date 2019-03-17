@@ -25,12 +25,16 @@ public class PopupWindow extends AppCompatActivity
         }
         else
         {
+            TextView choicePretext = (TextView) findViewById(R.id.regionPopupTextview);
+            choicePretext.setText(DataHolder.events[DataHolder.I].preText);
+            choicePretext.setVisibility(View.VISIBLE);
             TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
             choiceOne.setVisibility(View.VISIBLE);
+            choiceOne.setText(DataHolder.events[DataHolder.I].name);
             TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
             choiceTwo.setVisibility(View.VISIBLE);
-            TextView choicePretext = (TextView) findViewById(R.id.regionPopupTextview);
-            choicePretext.setVisibility(View.VISIBLE);
+            DataHolder.I++;
+            choiceTwo.setText(DataHolder.events[DataHolder.I].name);
         }
 
         DisplayMetrics dm = new DisplayMetrics();

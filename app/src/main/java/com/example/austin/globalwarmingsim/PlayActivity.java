@@ -44,7 +44,7 @@ public class PlayActivity extends AppCompatActivity
 
         String popText = "Population: " + newGame.population;
         String polText = "Pollution: " + newGame.pollution;
-        String dateText = "Year: " + newGame.date;
+        String dateText = "Year: " + DataHolder.date;
 
         TextView populationText = (TextView) findViewById(R.id.textView_population);
         populationText.setText(popText);
