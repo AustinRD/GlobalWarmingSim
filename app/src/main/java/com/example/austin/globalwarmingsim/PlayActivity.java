@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+
 public class PlayActivity extends AppCompatActivity
 {
     //Code necessary for scaling the play map. (Zooming)
@@ -85,6 +87,10 @@ public class PlayActivity extends AppCompatActivity
 
     private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener
     {
+        ImageView eastCoastInfo = (ImageView) findViewById(R.id.imageView_eastCoastEye);
+        ImageView westCoastInfo = (ImageView) findViewById(R.id.imageView_westCoastEye);
+        ImageView southernInfo = (ImageView) findViewById(R.id.imageView_southernEye);
+        ImageView midWestInfo = (ImageView) findViewById(R.id.imageView_midWestEye);
         @Override
         public boolean onScale(ScaleGestureDetector scaleGestureDetector)
         {
@@ -96,10 +102,19 @@ public class PlayActivity extends AppCompatActivity
             {
                 mImageView.setScaleX(mScaleFactor);
                 mImageView.setScaleY(mScaleFactor);
+                eastCoastInfo.setVisibility(View.GONE);
+                westCoastInfo.setVisibility(View.GONE);
+                southernInfo.setVisibility(View.GONE);
+                midWestInfo.setVisibility(View.GONE);
             }
-            else if(mScaleFactor < 1)
+            else if(mScaleFactor <= 1)
             {
                 mScaleFactor = 1.0f;
+                eastCoastInfo.setVisibility(View.VISIBLE);
+                westCoastInfo.setVisibility(View.VISIBLE);
+                southernInfo.setVisibility(View.VISIBLE);
+                midWestInfo.setVisibility(View.VISIBLE);
+
             }
             else if(mScaleFactor > 2)
             {
