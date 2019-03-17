@@ -22,6 +22,8 @@ public class DataHolder
             new Region("East", 100000000, sim),
     };
 
+    static public int date = 1980;
+
     static public Event[] events = new Event[50];
 
     public static Event[] initEvents(Simulator s)

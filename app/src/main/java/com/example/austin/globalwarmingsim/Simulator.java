@@ -28,7 +28,7 @@ public class Simulator {
                 cO2 = 335.0; // ppm
                 avgTemp = 57.5; // fahrenheit
                 seaLevel = 0; // ft from starting
-                date = 1979;
+                date = DataHolder.date;
         }
     }
 
@@ -46,7 +46,7 @@ public class Simulator {
         resultingEvents.addAll(resultingEvents());
         resultingEvents = filterDates(resultingEvents);
         results = resultingEvents;
-        date++;
+        DataHolder.date++;
     }
 
     /**

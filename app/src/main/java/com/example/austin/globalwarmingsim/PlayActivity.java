@@ -40,7 +40,7 @@ public class PlayActivity extends AppCompatActivity
         newGame.setDifficulty(0);
 
         ArrayList<Event> event = new ArrayList<>();
-        newGame.tick(event);
+        newGame.tick(event); //Gets the new game initial values.
 
         String popText = "Population: " + newGame.population;
         String polText = "Pollution: " + newGame.pollution;
@@ -52,6 +52,8 @@ public class PlayActivity extends AppCompatActivity
         pollutionText.setText(polText);
         TextView yearText = (TextView) findViewById(R.id.textView_year);
         yearText.setText(dateText);
+
+
         mImageView = (ImageView) findViewById(R.id.imageView_playMap);
         mScaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
@@ -104,6 +106,10 @@ public class PlayActivity extends AppCompatActivity
             }
         });
 
+        while(DataHolder.date < 2000)
+        {
+            newGame.tick(event);
+        }
 
     }
 
