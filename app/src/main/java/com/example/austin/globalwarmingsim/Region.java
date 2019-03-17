@@ -38,8 +38,21 @@ public class Region {
         events = new ArrayList();
         //neighbors = ns;
         switch (diff) {
-            default:
+
+            case(1):
+                badIndustry = 10;
+                goodIndustry = 0;
+                badEnergy = 10;
+                goodEnergy = 0;
+                population = 60000;
+                animalSpecies = 50;
+                development = 6;
+                updateDeltacO2();
+                updatePopGrowth();
+                updateDeltaPopulation();
+
             case(0):
+            default:
                 badIndustry = 10;
                 goodIndustry = 2;
                 badEnergy = 10;

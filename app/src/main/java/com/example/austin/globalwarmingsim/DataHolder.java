@@ -13,9 +13,9 @@ public class DataHolder {
     static public boolean music = true;
 
     static public Region[] region = {
-            new Region(0, "West", sim),
-            new Region(0, "Midwest", sim),
-            new Region(0, "South", sim),
-            new Region(0, "East", sim),
+            new Region(DataHolder.difficulty, "West", sim),
+            new Region(DataHolder.difficulty, "Midwest", sim),
+            new Region(DataHolder.difficulty, "South", sim),
+            new Region(DataHolder.difficulty, "East", sim),
     };
 }
