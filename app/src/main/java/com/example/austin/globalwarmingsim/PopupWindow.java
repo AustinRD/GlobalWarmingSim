@@ -29,17 +29,17 @@ public class PopupWindow extends AppCompatActivity
         else
         {
             TextView choicePretext = (TextView) findViewById(R.id.regionPopupTextview);
-            choicePretext.setText(DataHolder.events[DataHolder.I].preText);
+            choicePretext.setText("TEST");//DataHolder.events[DataHolder.I].preText);
             choicePretext.setVisibility(View.VISIBLE);
             TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
             choiceOne.setVisibility(View.VISIBLE);
-            choiceOne.setText(DataHolder.events[DataHolder.I].name);
+            choiceOne.setText("TEST");//DataHolder.events[DataHolder.I].name);
             TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
             choiceTwo.setVisibility(View.VISIBLE);
             //postText1 = DataHolder.events[DataHolder.I].text;
             ii = DataHolder.I;
             DataHolder.I++;
-            choiceTwo.setText(DataHolder.events[DataHolder.I].name);
+            choiceTwo.setText("TEST");//DataHolder.events[DataHolder.I].name);
             //postText2 = DataHolder.events[DataHolder.I].text;
             choiceOne.setOnClickListener(new View.OnClickListener()
             {
@@ -51,7 +51,7 @@ public class PopupWindow extends AppCompatActivity
                     TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
                     choiceTwo.setVisibility(View.GONE);
                     TextView postText = (TextView) findViewById(R.id.regionPopupTextview);
-                    postText.setText(DataHolder.events[ii].text);
+                    postText.setText("TEST");//DataHolder.events[ii].text);
 
                 }
             });
@@ -65,11 +65,11 @@ public class PopupWindow extends AppCompatActivity
                     TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
                     choiceTwo.setVisibility(View.GONE);
                     TextView postText = (TextView) findViewById(R.id.regionPopupTextview);
-                    postText.setText(DataHolder.events[DataHolder.I].text);
+                    postText.setText("TEST");//DataHolder.events[DataHolder.I].text);
 
                 }
             });
-            DataHolder.I++;
+            //DataHolder.I++;
         }
 
         DisplayMetrics dm = new DisplayMetrics();
@@ -87,7 +87,7 @@ public class PopupWindow extends AppCompatActivity
 
     public String populateRegionInfo(int whichRegion)
     {
-        String textViewField = "" + DataHolder.region[whichRegion].name + "\n Population: " + DataHolder.region[whichRegion].population + "\nDevelopment: " + DataHolder.region[whichRegion].development + "\nAnimal Species: " + DataHolder.region[whichRegion].animalSpecies + "\nPopulation Growth Rate: " + DataHolder.region[whichRegion].dPopulation + "";
+        String textViewField = "" + DataHolder.regions[whichRegion].name + "\n Population: " + DataHolder.regions[whichRegion].population + "\nDevelopment: " + DataHolder.regions[whichRegion].development + "\nAnimal Species: " + DataHolder.regions[whichRegion].animalSpecies + "\nPopulation Growth Rate: " + DataHolder.regions[whichRegion].dPopulation + "";
         return textViewField;
     }
 }

@@ -55,7 +55,13 @@ public class Region {
                 goodEnergy = 2;
                 animalSpecies = 100;
                 development = 5;
+                sim.development = 5;
                 sim.pollution = 20;
+                development = 5;
+                sim.cO2 = 335.0; // ppm
+                sim.avgTemp = 57.5; // fahrenheit
+                sim.seaLevel = 0; // ft from starting
+                sim.date = DataHolder.date;
                 break;
             case(1): // HARD (Untested results.)
                 badIndustry = 20;
@@ -66,6 +72,12 @@ public class Region {
                 development = 5;
                 badFactEmission *= 2;
                 sim.pollution = 30;
+                sim.development = 5;
+                development = 5;
+                sim.cO2 = 335.0; // ppm
+                sim.avgTemp = 57.5; // fahrenheit
+                sim.seaLevel = 0; // ft from starting
+                sim.date = DataHolder.date;
                 break;
         }
         updateDeltacO2();

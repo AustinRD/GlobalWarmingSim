@@ -7,7 +7,7 @@ public class DataHolder
 {
     static public int whichRegion = 5;
 
-    static public Simulator sim = new Simulator(0);
+    static public Simulator sim = new Simulator();
 
     static public int difficulty = 0; //0 for standard, 1 for hard
 
@@ -15,7 +15,7 @@ public class DataHolder
 
     static public boolean music = true;
 
-    static public Region[] region = {
+    static public Region[] regions = {
             new Region("West", 15000000, sim),
             new Region("Midwest", 50000000, sim),
             new Region("South", 50000000, sim),

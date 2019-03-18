@@ -1,16 +1,24 @@
 package com.example.austin.globalwarmingsim;
 
 import android.content.Intent;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 import java.util.ArrayList;
+import java.util.Timer;
 
 public class Simulator {
-    public Region[] regions = {
-            new Region("West", 15000000, DataHolder.sim),
-            new Region("Midwest", 50000000, DataHolder.sim),
-            new Region("South", 50000000, DataHolder.sim),
-            new Region("East", 100000000, DataHolder.sim),
-    };
+    public int ticks = 0;
+    private Timer timer;
+
+    public Region[] regions;
+//    public Region[] regions = {
+//            new Region("West", 15000000, DataHolder.sim),
+//            new Region("Midwest", 50000000, DataHolder.sim),
+//            new Region("South", 50000000, DataHolder.sim),
+//            new Region("East", 100000000, DataHolder.sim),
+//    };
     public ArrayList<Event> events;
     public ArrayList<Event> results;
     public int development; // 1-10 scale. 1 good 10 bad
@@ -26,16 +34,19 @@ public class Simulator {
     public int animalSpecies;
     public int pollution;
 
-    public Simulator(int diff) {
+    public Simulator() {
         events = new ArrayList<>();
-        switch (diff) {
-            default:
-            case(0):
-                development = 5;
-                cO2 = 335.0; // ppm
-                avgTemp = 57.5; // fahrenheit
-                seaLevel = 0; // ft from starting
-                date = DataHolder.date;
+    }
+
+    public void startSimulation() {
+        timer = new Timer();
+        timer.schedule(new AdvanceSim(), 0 , 500);
+    }
+
+    public class AdvanceSim extends TimerTask {
+        public void run() {
+            System.out.println("Advancing sim");
+            tick(new ArrayList<Event>());
         }
     }
 
@@ -44,6 +55,7 @@ public class Simulator {
      * @param es ArrayList of events that happened during this turn.
      */
     public void tick(ArrayList<Event> es) {
+        ArrayList<Event> results = new ArrayList();
         ArrayList<Event>[] stagedEvents = divvyEvents(es);
         events.addAll(stagedEvents[4]);
         applyEvents(); // Apply global events.
@@ -52,8 +64,15 @@ public class Simulator {
         updateGlobals();
         resultingEvents.addAll(resultingEvents());
         resultingEvents = filterDates(resultingEvents);
+//        results = resultingEvents;
+//        DataHolder.date++;
+
+        resultingEvents = new ArrayList();
         results = resultingEvents;
-        DataHolder.date++;
+        ticks++;
+        if (ticks % 4 == 0) {
+            DataHolder.date++;
+        }
     }
 
     /**
@@ -120,8 +139,8 @@ public class Simulator {
     private void applyEvents() {
         for(Event event : events) { // apply events whose time has come.
             if (event.triggerTime <= date) {
-                avgTemp = event.avgTemp;
-                seaLevel = event.seaLevel;
+                avgTemp += event.avgTemp;
+                seaLevel += event.seaLevel;
             }
         }
     }
