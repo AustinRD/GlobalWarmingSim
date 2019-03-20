@@ -2,6 +2,12 @@ package com.example.austin.globalwarmingsim;
 import java.util.ArrayList;
 
 public class Region {
+    // Setting defaults
+    public static final int DEFAULT_EAST_POP = 15000000;
+    public static final int DEFAULT_SOUTH_POP = 75000000;
+    public static final int DEFAULT_WEST_POP = 100000000;
+    public static final int DEFAULT_MIDWEST_POP = 100000000;
+
     public Simulator sim;
     // Unique to region.
     public String name;
@@ -46,7 +52,7 @@ public class Region {
      * //@param d Difficulty: 0 = NORMAL, 1 = HARD.
      */
     public void setDifficulty() {
-        switch (DataHolder.difficulty) {
+        switch (Settings.difficulty) {
             default:
             case(0): // NORMAL DIFFICULTY, THIS IS A REAL AS I COULD GET IT.
                 badIndustry = 10;
@@ -61,7 +67,7 @@ public class Region {
                 sim.cO2 = 335.0; // ppm
                 sim.avgTemp = 57.5; // fahrenheit
                 sim.seaLevel = 0; // ft from starting
-                sim.date = DataHolder.date;
+                sim.date = Settings.startDate;
                 break;
             case(1): // HARD (Untested results.)
                 badIndustry = 20;
@@ -77,7 +83,7 @@ public class Region {
                 sim.cO2 = 335.0; // ppm
                 sim.avgTemp = 57.5; // fahrenheit
                 sim.seaLevel = 0; // ft from starting
-                sim.date = DataHolder.date;
+                sim.date = Settings.startDate;
                 break;
         }
         updateDeltacO2();

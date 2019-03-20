@@ -20,38 +20,38 @@ public class SettingsActivity extends AppCompatActivity {
         ToggleButton soundFxButton = findViewById(R.id.button_sound_fx);
         ToggleButton musicButton = findViewById(R.id.button_music);
 
-        if (DataHolder.difficulty == 1)
+        if (Settings.difficulty == 1)
             difficultyButton.toggle();
-        if (DataHolder.soundFX == false)
+        if (Settings.soundFX == false)
             soundFxButton .toggle();
-        if (DataHolder.music == false)
+        if (Settings.music == false)
             musicButton.toggle();
 
         difficultyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (DataHolder.difficulty == 0)
-                    DataHolder.difficulty = 1;
+                if (Settings.difficulty == 0)
+                    Settings.difficulty = 1;
                 else
-                    DataHolder.difficulty = 0;
+                    Settings.difficulty = 0;
             }
         });
         soundFxButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (DataHolder.soundFX == true)
-                    DataHolder.soundFX = false;
+                if (Settings.soundFX == true)
+                    Settings.soundFX = false;
                 else
-                    DataHolder.soundFX = true;
+                    Settings.soundFX = true;
             }
         });
         musicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (DataHolder.music == true)
-                    DataHolder.music = false;
+                if (Settings.music == true)
+                    Settings.music = false;
                 else
-                    DataHolder.music = true;
+                    Settings.music = true;
             }
         });
     }

@@ -26,51 +26,51 @@ public class PopupWindow extends AppCompatActivity
             TextView regionInfo = (TextView)findViewById(R.id.regionPopupTextview);
             regionInfo.setText(populateRegionInfo(DataHolder.whichRegion));
         }
-        else
-        {
-            TextView choicePretext = (TextView) findViewById(R.id.regionPopupTextview);
-            choicePretext.setText("TEST");//DataHolder.events[DataHolder.I].preText);
-            choicePretext.setVisibility(View.VISIBLE);
-            TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
-            choiceOne.setVisibility(View.VISIBLE);
-            choiceOne.setText("TEST");//DataHolder.events[DataHolder.I].name);
-            TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
-            choiceTwo.setVisibility(View.VISIBLE);
-            //postText1 = DataHolder.events[DataHolder.I].text;
-            ii = DataHolder.I;
-            DataHolder.I++;
-            choiceTwo.setText("TEST");//DataHolder.events[DataHolder.I].name);
-            //postText2 = DataHolder.events[DataHolder.I].text;
-            choiceOne.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
-                    choiceOne.setVisibility(View.GONE);
-                    TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
-                    choiceTwo.setVisibility(View.GONE);
-                    TextView postText = (TextView) findViewById(R.id.regionPopupTextview);
-                    postText.setText("TEST");//DataHolder.events[ii].text);
-
-                }
-            });
-            choiceTwo.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
-                    choiceOne.setVisibility(View.GONE);
-                    TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
-                    choiceTwo.setVisibility(View.GONE);
-                    TextView postText = (TextView) findViewById(R.id.regionPopupTextview);
-                    postText.setText("TEST");//DataHolder.events[DataHolder.I].text);
-
-                }
-            });
-            //DataHolder.I++;
-        }
+//        else
+//        {
+//            TextView choicePretext = (TextView) findViewById(R.id.regionPopupTextview);
+//            choicePretext.setText("TEST");//DataHolder.events[DataHolder.I].preText);
+//            choicePretext.setVisibility(View.VISIBLE);
+//            TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
+//            choiceOne.setVisibility(View.VISIBLE);
+//            choiceOne.setText("TEST");//DataHolder.events[DataHolder.I].name);
+//            TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
+//            choiceTwo.setVisibility(View.VISIBLE);
+//            //postText1 = DataHolder.events[DataHolder.I].text;
+//            ii = DataHolder.I;
+//            DataHolder.I++;
+//            choiceTwo.setText("TEST");//DataHolder.events[DataHolder.I].name);
+//            //postText2 = DataHolder.events[DataHolder.I].text;
+//            choiceOne.setOnClickListener(new View.OnClickListener()
+//            {
+//                @Override
+//                public void onClick(View v)
+//                {
+//                    TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
+//                    choiceOne.setVisibility(View.GONE);
+//                    TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
+//                    choiceTwo.setVisibility(View.GONE);
+//                    TextView postText = (TextView) findViewById(R.id.regionPopupTextview);
+//                    postText.setText("TEST");//DataHolder.events[ii].text);
+//
+//                }
+//            });
+//            choiceTwo.setOnClickListener(new View.OnClickListener()
+//            {
+//                @Override
+//                public void onClick(View v)
+//                {
+//                    TextView choiceOne = (TextView) findViewById(R.id.textView_choiceOne);
+//                    choiceOne.setVisibility(View.GONE);
+//                    TextView choiceTwo = (TextView) findViewById(R.id.textView_choiceTwo);
+//                    choiceTwo.setVisibility(View.GONE);
+//                    TextView postText = (TextView) findViewById(R.id.regionPopupTextview);
+//                    postText.setText("TEST");//DataHolder.events[DataHolder.I].text);
+//
+//                }
+//            });
+//            //DataHolder.I++;
+//        }
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);

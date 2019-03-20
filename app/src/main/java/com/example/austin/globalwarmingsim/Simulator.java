@@ -71,7 +71,7 @@ public class Simulator {
         results = resultingEvents;
         ticks++;
         if (ticks % 4 == 0) {
-            DataHolder.date++;
+            date++; // redundant, but for now
         }
     }
 
